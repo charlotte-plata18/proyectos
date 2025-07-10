@@ -1,0 +1,7 @@
+numeros = []
+for i in range(5):
+    numero = int(input(f"Ingrese el número {i+1}: "))
+    numeros.append(numero)
+
+numeros.sort(reverse=True)
+print("Ordenados de mayor a menor:", numeros)

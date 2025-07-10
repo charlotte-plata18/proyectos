@@ -1,0 +1,12 @@
+aprendices = ["Alvarez", "Camargo", "Diaz", "Fernandez", "Gomez", 
+              "Lopez", "Martinez", "Perez", "Ramirez", "Zapata"]
+
+print("Lista original:")
+print(sorted(aprendices))
+
+nuevo = input("Ingrese apellido del nuevo aprendiz: ")
+aprendices.append(nuevo)
+aprendices.sort()
+
+print("\nLista actualizada:")
+print(aprendices)

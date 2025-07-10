@@ -1,0 +1,56 @@
+import random
+
+lista = [random.randint(1, 100) for _ in range(20)]
+
+def menu():
+    print("\n--- MENÚ ---")
+    print("1. Buscar número en la lista")
+    print("2. Contar apariciones del número")
+    print("3. Número mayor y veces que aparece")
+    print("4. ¿Aparece más veces que el mayor?")
+    print("5. Calcular media total")
+    print("6. Media entre mayor y menor")
+    print("7. Lista inversa")
+    print("8. Salir")
+
+buscado = int(input("Ingrese el número a analizar: "))
+
+while True:
+    menu()
+    opcion = input("Seleccione una opción: ")
+
+    if opcion == "1":
+        if buscado in lista:
+            print("Encontrado en la posición:", lista.index(buscado))
+        else:
+            print("Número no encontrado")
+
+    elif opcion == "2":
+        print(f"Aparece {lista.count(buscado)} veces")
+
+    elif opcion == "3":
+        mayor = max(lista)
+        print("Mayor:", mayor)
+        print("Aparece", lista.count(mayor), "veces")
+
+    elif opcion == "4":
+        if lista.count(buscado) > lista.count(max(lista)):
+            print("Verdadero")
+        else:
+            print("Falso")
+
+    elif opcion == "5":
+        print("Media:", sum(lista) / len(lista))
+
+    elif opcion == "6":
+        print("Media entre mayor y menor:", (max(lista) + min(lista)) / 2)
+
+    elif opcion == "7":
+        print("Lista inversa:", lista[::-1])
+
+    elif opcion == "8":
+        print("Saliendo...")
+        break
+
+    else:
+        print("Opción inválida")

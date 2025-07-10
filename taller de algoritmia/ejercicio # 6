@@ -1,0 +1,11 @@
+import random
+
+lista = [random.randint(1, 100) for _ in range(20)]
+print("Lista:", lista)
+
+buscado = int(input("Ingrese el número a buscar: "))
+
+if buscado in lista:
+    print("Encontrado en la posición:", lista.index(buscado))
+else:
+    print("Número no encontrado")

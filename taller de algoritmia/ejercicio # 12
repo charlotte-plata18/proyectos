@@ -1,0 +1,3 @@
+inversa = lista[::-1]
+print("Lista original:", lista)
+print("Lista inversa:", inversa)

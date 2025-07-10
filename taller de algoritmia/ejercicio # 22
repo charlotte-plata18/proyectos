@@ -1,0 +1,50 @@
+import random
+
+def generar_codigo():
+    return random.sample(range(10), 4)
+
+def analizar_intento(intento, codigo):
+    verdes = 0
+    amarillos = 0
+    rojos = 0
+
+    for i in range(4):
+        if intento[i] == codigo[i]:
+            verdes += 1
+        elif intento[i] in codigo:
+            amarillos += 1
+        else:
+            rojos += 1
+
+    return rojos, amarillos, verdes
+
+def juego_dificil():
+    print(" Juego DIFICIL: Rojo-Amarillo-Verde (Modo Cantidad)")
+    print("Adivina los 4 dígitos únicos. Recibirás la cantidad de aciertos, no su posición.")
+
+    codigo = generar_codigo()
+    intentos = 0
+
+    while True:
+        try:
+            entrada = input("\nIngrese 4 dígitos separados por espacios (ej: 1 2 3 4): ")
+            intento = list(map(int, entrada.strip().split()))
+
+            if len(intento) != 4 or len(set(intento)) != 4 or any(n < 0 or n > 9 for n in intento):
+                print(" Entrada inválida. Ingrese 4 dígitos únicos entre 0 y 9.")
+                continue
+
+            intentos += 1
+            rojos, amarillos, verdes = analizar_intento(intento, codigo)
+
+            print(f"Pista: {rojos} rojos, {amarillos} amarillos, {verdes} verdes")
+
+            if verdes == 4:
+                print(f"\n🎉 ¡Has acertado el código secreto {codigo} en {intentos} intento(s)!")
+                break
+
+        except ValueError:
+            print(" Error: Ingrese 4 números separados por espacios.")
+
+# Iniciar el juego difícil
+juego_dificil()

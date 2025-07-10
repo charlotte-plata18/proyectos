@@ -1,0 +1,8 @@
+numero = int(input("Ingrese un número entero: "))
+# Convertimos a positivo por si es negativo
+numero_abs = abs(numero)
+
+# Convertimos a cadena para contar dígitos
+cantidad_digitos = len(str(numero_abs))
+
+print(f"El número {numero} tiene {cantidad_digitos} dígito(s).")

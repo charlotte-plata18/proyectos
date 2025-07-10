@@ -1,0 +1,4 @@
+if lista.count(buscado) > lista.count(max(lista)):
+    print("Verdadero")
+else:
+    print("Falso")

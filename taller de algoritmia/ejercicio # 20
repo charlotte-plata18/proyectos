@@ -1,0 +1,18 @@
+# Solicitar datos
+capital = float(input("Ingrese el capital del préstamo: "))
+interes_anual = float(input("Ingrese el interés anual (%): "))
+años = int(input("Ingrese el número de años del préstamo: "))
+
+# Cálculos
+R = interes_anual / 100 / 12  # tasa mensual
+N = años * 12  # número total de pagos
+
+# Fórmula de la cuota mensual
+cuota_mensual = capital * (R * (1 + R)**N) / ((1 + R)**N - 1)
+
+# Total a pagar
+total_pagar = cuota_mensual * N
+
+# Resultados
+print(f"\nCuota mensual: ${cuota_mensual:.2f}")
+print(f"Total a pagar al final del préstamo: ${total_pagar:.2f}")

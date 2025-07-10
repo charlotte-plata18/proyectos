@@ -1,0 +1,5 @@
+mayor = max(lista)
+veces_mayor = lista.count(mayor)
+
+print("Número mayor:", mayor)
+print("Aparece", veces_mayor, "veces")

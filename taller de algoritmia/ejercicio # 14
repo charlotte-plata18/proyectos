@@ -1,0 +1,8 @@
+texto = input("Ingrese un texto: ")
+palabras = texto.split()
+
+cantidad = len(palabras)
+max_longitud = max(len(p) for p in palabras)
+
+print("Cantidad de palabras:", cantidad)
+print("Tamaño de la palabra más larga:", max_longitud)

@@ -1,0 +1,5 @@
+veces = lista.count(buscado)
+if veces > 0:
+    print(f"Aparece {veces} veces")
+else:
+    print("Número no encontrado")

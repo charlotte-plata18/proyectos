@@ -1,0 +1,12 @@
+valor = int(input("Ingrese el valor a cobrar: "))
+pagado = int(input("Ingrese el monto entregado: "))
+
+cambio = pagado - valor
+monedas = [1000, 500, 200, 100, 50]
+
+print("Cambio:", cambio)
+for m in monedas:
+    cantidad = cambio // m
+    if cantidad > 0:
+        print(f"{cantidad} moneda(s) de {m}")
+        cambio %= m

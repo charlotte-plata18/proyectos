@@ -1,0 +1,4 @@
+mayor = max(lista)
+menor = min(lista)
+media = (mayor + menor) / 2
+print("Media entre el mayor y menor:", media)

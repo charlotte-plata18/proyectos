@@ -1,0 +1,2 @@
+media = sum(lista) / len(lista)
+print("Media de todos los números:", media)
